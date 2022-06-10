@@ -14,11 +14,14 @@ app.get('/users', (req, res) => {
 );
 app.post('/users', (req, res) => {
     console.log('POST /api/users respondiendo');
+    const firstName = req.params.firstName;
+    const lastName = req.params.lastName;
+    const mail = req.params.mail;
+
     const usuario = {
-        id: 1,
-        firstName: 'Juan',
-        lastName: 'Hardcodeado',
-        email: 'jhardcodeado@email.com',
+        firstName,
+        lastName,
+        email,
       };
     res.json({usuario : usuario});
 })
