@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8090;
+const port = process.env.PORT || 8091;
 const server = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 }
@@ -14,17 +14,17 @@ app.get('/users', (req, res) => {
     res.json({msg : "Hello fucking World de porqueria y sigo escribiendo!"});
 }
 );
-app.post('/users', (req, res) => {
+app.post('/v1/users', (req, res) => {
     console.log('POST /api/users respondiendo');
     console.log(req.body)
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
+    const email = req.body.mail;
+    const password = req.body.password;
+    const tc = req.body.tc;
 
-    const usuario = {
-        firstName,
-        lastName,
+    const usuarioCrear = {
         email,
+        password,
+        tc,
       };
-    res.json({usuarioEnviado : usuario});
+    res.json({datosNewUser : usuarioCrear});
 })
