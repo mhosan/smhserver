@@ -5,6 +5,8 @@ const server = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 }
 );
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
@@ -14,9 +16,10 @@ app.get('/users', (req, res) => {
 );
 app.post('/users', (req, res) => {
     console.log('POST /api/users respondiendo');
-    const firstName = req.params.firstName;
-    const lastName = req.params.lastName;
-    const mail = req.params.mail;
+    console.log(req.body)
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
 
     const usuario = {
         firstName,
