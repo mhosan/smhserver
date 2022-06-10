@@ -7,7 +7,7 @@ const server = app.listen(port, () => {
 );
 server.on("error", error => { console.log(error) });
 
-app.get('/api/users', (req, res) => {
+app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
     res.json({msg : "Hello fucking World de porqueria y sigo escribiendo!"});
 }
