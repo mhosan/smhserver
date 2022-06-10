@@ -26,5 +26,5 @@ app.post('/users', (req, res) => {
         lastName,
         email,
       };
-    res.json({usuario : usuario});
+    res.json({usuarioEnviado : usuario});
 })
