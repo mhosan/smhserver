@@ -9,7 +9,7 @@ server.on("error", error => { console.log(error) });
 
 app.get('/api/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "Hello fucking World de porqueria!"});
+    res.json({msg : "Hello fucking World de porqueria y sigo escribiendo!"});
 }
 );
 app.post('/users', (req, res) => {
