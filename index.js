@@ -11,7 +11,7 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "Y aqui estoy modificando la cosa..."});
+    res.json({msg : "Y aqui estoy modificando de nuevo la cosa..."});
 }
 );
 app.post('/users', (req, res) => {
@@ -23,5 +23,5 @@ app.post('/users', (req, res) => {
         password: req.body.password,
         tc: req.body.tc
       };
-    res.json({datosNewUser : usuarioCrear});
+    res.json(usuarioCrear);
 });
