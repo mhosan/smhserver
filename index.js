@@ -11,10 +11,10 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "Hello fucking World de porqueria y sigo escribiendo!"});
+    res.json({msg : "Y aqui estoy ..."});
 }
 );
-app.post('/v1/users', (req, res) => {
+app.post('/users', (req, res) => {
     console.log('POST /api/users respondiendo');
     console.log(req.body)
     const email = req.body.mail;
