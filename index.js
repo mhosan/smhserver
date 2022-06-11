@@ -11,7 +11,7 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "Y aqui estoy toqueteando la cosa..."});
+    res.json({msg : "versión 01"});
 }
 );
 app.post('/users', (req, res) => {
@@ -19,8 +19,8 @@ app.post('/users', (req, res) => {
     console.log(req.body)
 
     res.json({
-        email : req.body.mail,
-        password: req.body.password,
-        tc: req.body.tc
+        "email" : req.body.mail,
+        "password": req.body.password,
+        "tc": req.body.tc
       });
 });
