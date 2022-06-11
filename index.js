@@ -12,7 +12,7 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 06"});
+    res.json({msg : "versión 07"});
 }
 );
 app.post('/users', (req, res) => {
@@ -28,9 +28,11 @@ app.post('/users', (req, res) => {
       }); */
 
     //res.send(`mail: ${email}, password: ${password}, tc: ${tc}`);
-    return res.json({
+    /* return res.json({
         "email" : req.body.mail,
         "password": req.body.password,
         "tc": req.body.tc
-    });
+    }); */
+
+    res.json({'mensaje' : 'ok'});
 });
