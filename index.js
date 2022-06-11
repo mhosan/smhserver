@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 12"});
+    res.json({msg : "versión 14"});
 }
 );
 app.post('/users', (req, res) => {
