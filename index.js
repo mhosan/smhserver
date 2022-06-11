@@ -11,17 +11,16 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "Y aqui estoy modificando de nuevo la cosa..."});
+    res.json({msg : "Y aqui estoy toqueteando la cosa..."});
 }
 );
 app.post('/users', (req, res) => {
     console.log('POST /api/users respondiendo');
     console.log(req.body)
-    
-    const usuarioCrear = {
+
+    res.json({
         email : req.body.mail,
         password: req.body.password,
         tc: req.body.tc
-      };
-    res.json(usuarioCrear);
+      });
 });
