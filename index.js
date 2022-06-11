@@ -11,16 +11,18 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 01"});
+    res.json({msg : "versión 02"});
 }
 );
 app.post('/users', (req, res) => {
     console.log('POST /api/users respondiendo');
     console.log(req.body)
 
-    res.json({
+    /* res.json({
         "email" : req.body.mail,
         "password": req.body.password,
         "tc": req.body.tc
-      });
+      }); */
+
+    res.send('POST /api/users respondiendo');
 });
