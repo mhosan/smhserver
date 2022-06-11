@@ -12,7 +12,7 @@ server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 08"});
+    res.json({msg : "versión 09"});
 }
 );
 app.post('/users', (req, res) => {
@@ -21,6 +21,11 @@ app.post('/users', (req, res) => {
     const email = req.body.mail
     const password = req.body.password
     const tc = req.body.tc
+    setTimeout(() => {
+        res.json({'email' : email, 'password': password, 'tc': tc});
+    }
+    , 1000);
+
     /* res.json({
         "email" : req.body.mail,
         "password": req.body.password,
@@ -34,5 +39,5 @@ app.post('/users', (req, res) => {
         "tc": req.body.tc
     }); */
 
-    res.json({'email' : email, 'password': password, 'tc': tc});
+    
 });
