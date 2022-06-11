@@ -1,17 +1,18 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 8091;
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 const server = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 }
 );
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
 server.on("error", error => { console.log(error) });
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 03"});
+    res.json({msg : "versión 04"});
 }
 );
 app.post('/users', (req, res) => {
