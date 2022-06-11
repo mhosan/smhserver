@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/users', (req, res) => {
     console.log('GET /api/users respondiendo');
-    res.json({msg : "versión 14"});
+    res.json({msg : "versión 15"});
 }
 );
 app.post('/users', (req, res) => {
@@ -39,8 +39,6 @@ app.post('/users', (req, res) => {
         "password": req.body.password,
         "tc": req.body.tc
     }); */
-    const email = "";
-    email = req.body.mail;
-    res.json({'email' : email});
+    res.json({msg : "versión 15"});
     
 });
